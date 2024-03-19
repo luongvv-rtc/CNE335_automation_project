@@ -14,15 +14,17 @@ if __name__ == 'main':
     print_program_info()
     # Server IP, key_pair and username:
     server_ip = '35.93.122.103'
-    key_pair = 'D:\Personal\OneDrive\PERSONAL\Documents\US Doc\Luong\RTC\BAS\Winter 2024\CNE 335 - Network programing II Python\KP_Web.ppk'
+    key_pair = (r'D:\Personal\OneDrive\PERSONAL\Documents\US Doc\Luong\RTC\BAS\Winter 2024\CNE 335 - Network '
+                r'programing II Python\KP_Web.pem')
     username = 'ubuntu'
 
     # run upgrade and update command
-    command = 'sudo apt update && sudo apt upgrade -y'
+    #command = 'sudo apt update && sudo apt upgrade -y'
+    command = 'ip -a'
     server = Server(server_ip, key_pair, username, command)
 
     # Call Ping and print results
     print(server.ping())
     print("Updating server...")
-    ssh_result = server.upgrade
-    print(ssh_result)
+    #ssh_result = server.upgrade
+    #print(ssh_result)
